@@ -49,7 +49,7 @@ export function DataTableFacetedFilter<TData, TValue>({
   };
 
   React.useEffect(() => {
-    if (!column?.getFilterValue()?.length) {
+    if (!(column?.getFilterValue() as string[])?.length) {
       setSelectedValues(new Set());
     }
   }, [column]);

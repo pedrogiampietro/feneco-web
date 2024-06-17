@@ -12,7 +12,7 @@ import { servers as dataServer } from "./data/servers";
 
 export default function Highscores() {
   const { isAuthenticated } = useAuth();
-  const [servers, setServers] = useState(dataServer);
+  const [servers, _] = useState(dataServer);
 
   // useEffect(() => {
   //   const getServers = async () => {

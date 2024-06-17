@@ -12,7 +12,6 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-  DropdownMenuShortcut,
 } from "@/components/ui/dropdown-menu";
 import { serverSchema } from "../data/schema";
 

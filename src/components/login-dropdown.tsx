@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -6,7 +5,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-  DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
