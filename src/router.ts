@@ -25,6 +25,12 @@ const router = createBrowserRouter([
         }),
       },
       {
+        path: "account-management",
+        lazy: async () => ({
+          Component: (await import("./pages/Account")).default,
+        }),
+      },
+      {
         path: "/sign-up",
         lazy: async () => ({
           Component: (await import("./pages/Auth/sign-up")).default,

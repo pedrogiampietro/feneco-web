@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 type LoginFormInputs = {
   email: string;
@@ -16,10 +17,12 @@ type LoginFormInputs = {
 
 export function LoginDropdown() {
   const { register, handleSubmit } = useForm<LoginFormInputs>();
+  const navigate = useNavigate();
 
   const onSubmit = (data: LoginFormInputs) => {
     // Lógica para fazer login
     console.log(data);
+    navigate("/account-management");
   };
 
   return (

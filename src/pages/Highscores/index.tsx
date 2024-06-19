@@ -3,12 +3,12 @@ import ThemeSwitch from "@/components/theme-switch";
 import { UserNav } from "@/components/user-nav";
 import { Layout, LayoutBody, LayoutHeader } from "@/components/custom/layout";
 import { DataTable } from "./components/data-table";
-import { columns } from "./components/columns";
 import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/use-auth";
 // import { fetchServers } from "@/services/serverService";
 import { LoginDropdown } from "@/components/login-dropdown";
 import { servers as dataServer } from "./data/servers";
+import { columns } from "./components/columns";
 
 export default function Highscores() {
   const { isAuthenticated } = useAuth();
