@@ -4,20 +4,6 @@ import NotFoundError from "./pages/Errors/not-found-error";
 import MaintenanceError from "./pages/Errors/maintenance-error";
 
 const router = createBrowserRouter([
-  // Auth routes
-  {
-    path: "/sign-up",
-    lazy: async () => ({
-      Component: (await import("./pages/Auth/sign-up")).default,
-    }),
-  },
-  {
-    path: "/forgot-password",
-    lazy: async () => ({
-      Component: (await import("./pages/Auth/forgot-password")).default,
-    }),
-  },
-
   // Main routes
   {
     path: "/",
@@ -36,6 +22,18 @@ const router = createBrowserRouter([
         path: "highscores",
         lazy: async () => ({
           Component: (await import("./pages/Highscores")).default,
+        }),
+      },
+      {
+        path: "/sign-up",
+        lazy: async () => ({
+          Component: (await import("./pages/Auth/sign-up")).default,
+        }),
+      },
+      {
+        path: "/forgot-password",
+        lazy: async () => ({
+          Component: (await import("./pages/Auth/forgot-password")).default,
         }),
       },
     ],

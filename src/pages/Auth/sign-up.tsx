@@ -1,12 +1,26 @@
+import ThemeSwitch from "@/components/theme-switch";
+import { UserNav } from "@/components/user-nav";
 import { Card } from "@/components/ui/card";
 import { SignUpForm } from "./components/sign-up-form";
 import { Link } from "react-router-dom";
+import { Layout, LayoutHeader } from "@/components/custom/layout";
+import { useAuth } from "@/hooks/use-auth";
+import { LoginDropdown } from "@/components/login-dropdown";
 import LogoImg from "@/assets/logo.png";
 
 export default function SignUp() {
+  const { isAuthenticated } = useAuth();
+
   return (
-    <>
-      <div className="container grid h-svh flex-col items-center justify-center bg-slate-900 lg:max-w-none lg:px-0">
+    <Layout>
+      {/* ===== Top Heading ===== */}
+      <LayoutHeader>
+        <div className="ml-auto flex items-center space-x-4">
+          <ThemeSwitch />
+          {isAuthenticated ? <UserNav /> : <LoginDropdown />}
+        </div>
+      </LayoutHeader>
+      <div className="container grid flex-col items-center justify-center bg-background lg:max-w-none lg:px-0">
         <div className="mx-auto flex w-full flex-col justify-center space-y-2 sm:w-[480px] lg:p-8">
           <div className="mb-4 flex items-center justify-center">
             <img src={LogoImg} alt="Faneco Logo" className="h-16 w-16" />
@@ -49,6 +63,6 @@ export default function SignUp() {
           </Card>
         </div>
       </div>
-    </>
+    </Layout>
   );
 }

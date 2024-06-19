@@ -12,8 +12,11 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/custom/button";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { PasswordInput } from "@/components/custom/password-input";
 import { cn } from "@/lib/utils";
+import { ComboBoxResident } from "./combobox-resident";
 
 interface SignUpFormProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -23,6 +26,13 @@ const formSchema = z
       .string()
       .min(1, { message: "Please enter your email" })
       .email({ message: "Invalid email address" }),
+    name: z
+      .string()
+      .min(5, { message: "Name must be at least 5 characters long" })
+      .max(32, { message: "Name must be no more than 32 characters long" }),
+    sex: z.enum(["female", "male"], {
+      message: "Please select either female or male",
+    }),
     password: z
       .string()
       .min(1, {
@@ -64,6 +74,31 @@ export function SignUpForm({ className, ...props }: SignUpFormProps) {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <div className="grid gap-2">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="space-y-1">
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Faneco" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <RadioGroup defaultValue="male">
+              <div className="flex flex-row items-center space-x-2">
+                <RadioGroupItem value="male" id="male" />
+                <Label htmlFor="male">Male</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="female" id="female" />
+                <Label htmlFor="female">Female</Label>
+              </div>
+            </RadioGroup>
+
+            <ComboBoxResident />
             <FormField
               control={form.control}
               name="email"
