@@ -42,6 +42,12 @@ const router = createBrowserRouter([
           Component: (await import("./pages/Auth/forgot-password")).default,
         }),
       },
+      {
+        path: "/character/pedro",
+        lazy: async () => ({
+          Component: (await import("./pages/Character")).default,
+        }),
+      },
     ],
   },
 
