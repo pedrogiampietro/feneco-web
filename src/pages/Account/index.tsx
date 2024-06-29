@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import ThemeSwitch from "@/components/theme-switch";
 import { UserNav } from "@/components/user-nav";
 import { Layout, LayoutBody, LayoutHeader } from "@/components/custom/layout";
@@ -5,9 +6,10 @@ import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/use-auth";
 import { LoginDropdown } from "@/components/login-dropdown";
 import { Button } from "@/components/custom/button";
-import { useState, useEffect } from "react";
 import { DataTable } from "./components/data-table";
 import { characterColumns } from "./components/columns";
+import { LateralSheet } from "@/components/lateral-sheet";
+import { CreateCharacterForm } from "./components/create-character-form";
 
 const characterData = [
   { Id: 1, Name: "Character One", Level: 20, Status: "online" },
@@ -18,6 +20,7 @@ const characterData = [
 export default function AccountManagement() {
   const { isAuthenticated } = useAuth();
   const [characters, setCharacters] = useState<any>([]);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -27,6 +30,9 @@ export default function AccountManagement() {
 
     fetchCharacters();
   }, []);
+
+  const openSheet = () => setIsSheetOpen(true);
+  const closeSheet = () => setIsSheetOpen(false);
 
   return (
     <Layout>
@@ -52,10 +58,19 @@ export default function AccountManagement() {
         </div>
 
         <div className="flex space-x-4 my-4">
-          <Button>Create New Character</Button>
+          <Button onClick={openSheet}>Create New Character</Button>
           <Button>Change Your Password</Button>
           <Button>Transfer a Character</Button>
         </div>
+
+        <LateralSheet
+          isOpen={isSheetOpen}
+          onClose={closeSheet}
+          title="Create New Character"
+          description="Fill out the form below to create a new character."
+        >
+          <CreateCharacterForm />
+        </LateralSheet>
 
         <Separator className="my-4" />
 
