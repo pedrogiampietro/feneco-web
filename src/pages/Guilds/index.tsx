@@ -1,160 +1,91 @@
-import {
-  NavigationMenu,
-  NavigationMenuList,
-  NavigationMenuLink,
-} from "@/components/ui/navigation-menu";
+import { Layout, LayoutHeader } from "@/components/custom/layout";
+import SearchCharacter from "@/components/custom/search-character";
+import { LoginDropdown } from "@/components/login-dropdown";
+import ThemeSwitch from "@/components/theme-switch";
+import { UserNav } from "@/components/user-nav";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/use-auth";
 
-export default function ViewGuildInformation() {
+export default function Guilds() {
+  const { isAuthenticated } = useAuth();
+
+  const guilds = [
+    { name: "Knights of Tibia", link: "/guild/pedro" },
+    { name: "Mages of Tibia", link: "#" },
+    { name: "Paladins of Tibia", link: "#" },
+    { name: "Druids of Tibia", link: "#" },
+    { name: "Sorcerers of Tibia", link: "#" },
+    { name: "Archers of Tibia", link: "#" },
+    { name: "Necromancers of Tibia", link: "#" },
+    { name: "Assassins of Tibia", link: "#" },
+  ];
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredGuilds = guilds.filter((guild) =>
+    guild.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <header className="flex items-center justify-between p-4 bg-primary text-primary-foreground rounded-t-lg">
-        <div className="flex items-center gap-4">
-          <div className="bg-primary-foreground rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">
-            G
+    <Layout>
+      <LayoutHeader>
+        <div className="ml-auto flex items-center space-x-4">
+          <SearchCharacter />
+          <ThemeSwitch />
+          {isAuthenticated ? <UserNav /> : <LoginDropdown />}
+        </div>
+      </LayoutHeader>
+
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container grid gap-6 px-4 md:px-6">
+          <div className="space-y-3 text-center">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Guilds of Tibia
+            </h2>
+            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl lg:text-base xl:text-xl">
+              Explore the diverse guilds that make up the vibrant Tibia
+              community.
+            </p>
+            <input
+              type="text"
+              placeholder="Search Guilds"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full px-4 py-2 mt-4 text-sm border rounded-md md:w-1/3 text-black"
+            />
           </div>
-          <div>
-            <div className="font-bold">The Mighty Guild</div>
-            <div className="text-sm text-muted-foreground">120 Members</div>
-          </div>
-        </div>
-        <div className="text-2xl font-bold">The Mighty Guild</div>
-      </header>
-      <div className="grid grid-cols-2 gap-6 p-6">
-        <div className="space-y-4">
-          <p>
-            Welcome to the Mighty Guild, a community of adventurers, warriors,
-            and mages who have banded together to conquer the challenges of the
-            realm. Our guild is known for its unwavering camaraderie, strategic
-            prowess, and unparalleled bravery in the face of adversity.
-          </p>
-          <p>
-            Whether you're a seasoned veteran or a fresh-faced recruit, you'll
-            find a home within our ranks. Together, we'll embark on epic quests,
-            vanquish fearsome foes, and forge lasting bonds of friendship that
-            will carry us through the toughest of battles.
-          </p>
-        </div>
-        <div className="aspect-video rounded-lg overflow-hidden">
-          <iframe
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-      </div>
-      <div className="border-t">
-        <NavigationMenu className="w-full">
-          <NavigationMenuList>
-            <NavigationMenuLink asChild>
-              <Link
-                href="#"
-                className="group inline-flex h-12 items-center justify-center px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
+          <div className="grid grid-cols-1 gap-4">
+            {filteredGuilds.map((guild, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-between rounded-lg border bg-background p-4 shadow-sm transition-colors hover:bg-muted"
               >
-                Members
-              </Link>
-            </NavigationMenuLink>
-            <NavigationMenuLink asChild>
-              <Link
-                href="#"
-                className="group inline-flex h-12 items-center justify-center px-6 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
-                prefetch={false}
-              >
-                Wars
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      <div className="p-6">
-        <h2 className="text-2xl font-bold mb-4">Members</h2>
-        <div className="grid grid-cols-3 gap-4">
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-green-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">John Doe</div>
-              <div className="text-sm text-muted-foreground">Level 25</div>
-            </div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-red-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">Jane Smith</div>
-              <div className="text-sm text-muted-foreground">Level 18</div>
-            </div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-green-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">Bob Johnson</div>
-              <div className="text-sm text-muted-foreground">Level 32</div>
-            </div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-green-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">Sarah Lee</div>
-              <div className="text-sm text-muted-foreground">Level 22</div>
-            </div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-red-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">Tom Wilson</div>
-              <div className="text-sm text-muted-foreground">Level 15</div>
-            </div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex items-center gap-4">
-            <div className="bg-green-500 rounded-full w-3 h-3" />
-            <div>
-              <div className="font-bold">Emily Davis</div>
-              <div className="text-sm text-muted-foreground">Level 28</div>
-            </div>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary">
+                    <img
+                      src="/placeholder.svg"
+                      width={40}
+                      height={40}
+                      alt="Guild Logo"
+                      className="h-8 w-8"
+                    />
+                  </div>
+                  <div className="font-atkinson text-lg font-bold">
+                    {guild.name}
+                  </div>
+                </div>
+                <Link
+                  to={guild.link}
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                >
+                  View
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="p-6">
-        <h2 className="text-2xl font-bold mb-4">Wars</h2>
-        <div className="bg-background rounded-lg p-4">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-4">
-              <div className="bg-primary-foreground rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">
-                G
-              </div>
-              <div>
-                <div className="font-bold">The Mighty Guild</div>
-                <div className="text-sm text-muted-foreground">120 Members</div>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="bg-primary-foreground rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold">
-                E
-              </div>
-              <div>
-                <div className="font-bold">Eternal Crusaders</div>
-                <div className="text-sm text-muted-foreground">90 Members</div>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="font-bold">Kills: 32</div>
-              <div className="text-sm text-muted-foreground">
-                The Mighty Guild
-              </div>
-            </div>
-            <div>
-              <div className="font-bold">Kills: 28</div>
-              <div className="text-sm text-muted-foreground">
-                Eternal Crusaders
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </Layout>
   );
 }

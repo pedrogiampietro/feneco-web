@@ -43,9 +43,21 @@ const router = createBrowserRouter([
         }),
       },
       {
-        path: "/character/pedro",
+        path: "/character/:name",
         lazy: async () => ({
           Component: (await import("./pages/Character")).default,
+        }),
+      },
+      {
+        path: "/guilds",
+        lazy: async () => ({
+          Component: (await import("./pages/Guilds")).default,
+        }),
+      },
+      {
+        path: "/guild/pedro",
+        lazy: async () => ({
+          Component: (await import("./pages/Guilds/view-guild")).default,
         }),
       },
     ],

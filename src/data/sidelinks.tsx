@@ -7,6 +7,7 @@ import {
   IconKey,
 } from "@tabler/icons-react";
 import { BarChartIcon } from "@radix-ui/react-icons";
+import { GroupIcon, ShieldHalf } from "lucide-react";
 
 export interface NavLink {
   title: string;
@@ -51,6 +52,12 @@ export const sidelinks: SideLink[] = [
     label: "",
     href: "/highscores",
     icon: <BarChartIcon />,
+  },
+  {
+    title: "Guilds",
+    label: "",
+    href: "/guilds",
+    icon: <ShieldHalf />,
   },
   // {
   //   title: "Forum",

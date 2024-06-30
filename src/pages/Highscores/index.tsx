@@ -9,6 +9,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { LoginDropdown } from "@/components/login-dropdown";
 import { servers as dataServer } from "./data/servers";
 import { columns } from "./components/columns";
+import SearchCharacter from "@/components/custom/search-character";
 
 export default function Highscores() {
   const { isAuthenticated } = useAuth();
@@ -30,9 +31,9 @@ export default function Highscores() {
 
   return (
     <Layout>
-      {/* ===== Top Heading ===== */}
       <LayoutHeader>
         <div className="ml-auto flex items-center space-x-4">
+          <SearchCharacter />
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
         </div>

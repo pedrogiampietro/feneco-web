@@ -25,6 +25,7 @@ import {
 import { useAuth } from "@/hooks/use-auth";
 import { LoginDropdown } from "@/components/login-dropdown";
 import { UserNav } from "@/components/user-nav";
+import SearchCharacter from "@/components/custom/search-character";
 
 export default function NewsDisplay() {
   const { isAuthenticated } = useAuth();
@@ -58,6 +59,7 @@ export default function NewsDisplay() {
     <Layout>
       <LayoutHeader>
         <div className="ml-auto flex items-center space-x-4">
+          <SearchCharacter />
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
         </div>
