@@ -1,7 +1,14 @@
 import { ComponentProps } from "react";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns/format";
-import { MoreVertical, Reply } from "lucide-react";
+import {
+  BadgeAlertIcon,
+  FacebookIcon,
+  InstagramIcon,
+  MoreVertical,
+  Reply,
+  YoutubeIcon,
+} from "lucide-react";
 import { Layout, LayoutHeader } from "@/components/custom/layout";
 import ThemeSwitch from "@/components/theme-switch";
 import {
@@ -64,6 +71,152 @@ export default function NewsDisplay() {
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
         </div>
       </LayoutHeader>
+
+      <div className="text-white">
+        <header className="bg-primary p-2 flex items-center justify-between border rounded-md mx-4">
+          <div className="flex items-center space-x-2">
+            <img
+              src="https://placehold.co/600x400"
+              alt="Logo"
+              className="h-8 w-8"
+            />
+            <span className="text-lg font-bold">CAST</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <YoutubeIcon className="h-6 w-6" />
+            <FacebookIcon className="h-6 w-6" />
+            <InstagramIcon className="h-6 w-6" />
+          </div>
+          <div className="text-sm">645 Players Online</div>
+        </header>
+        <main className="p-4">
+          <section className="border p-4 rounded-md mb-4">
+            <h2 className="text-xl font-bold mb-2">Mural de Recados</h2>
+            <ul className="space-y-2">
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">29/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-red-500" />
+                <span className="text-sm">
+                  NOVO UPDATE ATIVO! UMA NOVA CIDADE, QUEST E HUNTS ALÉM DE
+                  RECOMPENSA DIÁ...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">28/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-blue-500" />
+                <span className="text-sm">
+                  FINAL DE SEMANA COM BÔNUS E BOSS! A PARTIR DO SS, 10% + LOOT E
+                  2X FAST RESPWAN...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">27/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-yellow-500" />
+                <span className="text-sm">
+                  Notícia Urgente de Última Hora! Hoje, 26/06, logo após o
+                  CASTLE WAR, haverá um...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">24/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-green-500" />
+                <span className="text-sm">
+                  CASTLE WAR, PELEGOS E GUERRAS ACONTECENDO... Convogue sua
+                  guild para tomar o CAS...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">23/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-purple-500" />
+                <span className="text-sm">
+                  INSCRIÇÕES ABERTAS PARA A 6ª COPA PVP do UnderWar! As melhores
+                  guilds com os mel...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">20/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-orange-500" />
+                <span className="text-sm">
+                  [EVENTO] Ataque Vikings: os Bárbaros! Abra uma nova cidade e
+                  ganhe exp diferenciada part...
+                </span>
+              </li>
+              <li className="flex items-center space-x-2">
+                <span className="text-sm">19/06/2024 -</span>
+                <BadgeAlertIcon className="h-4 w-4 text-pink-500" />
+                <span className="text-sm">
+                  PROMOÇÃO DE SÃO JOÃO COM ITENS DE EDIÇÃO LIMITADA... A Pacotes
+                  exclusivos e raros...
+                </span>
+              </li>
+            </ul>
+          </section>
+          <section className="border p-4 rounded-md mb-4">
+            <img
+              src="https://placehold.co/600x400"
+              alt="UnderBet"
+              className="w-full h-48 object-cover rounded-md"
+            />
+          </section>
+          <section className="border p-4 rounded-md">
+            <h2 className="text-xl font-bold mb-2">
+              Os clãs mais sanguinários
+            </h2>
+            <div className="grid grid-cols-5 gap-4">
+              <div className="text-center">
+                <img
+                  src="https://placehold.co/600x400"
+                  alt="Clan 1"
+                  className="w-24 h-24 mx-auto rounded-md"
+                />
+                <p className="mt-2">Amostradhinos</p>
+                <p className="text-sm text-muted-foreground">4126 kills</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="https://placehold.co/600x400"
+                  alt="Clan 2"
+                  className="w-24 h-24 mx-auto rounded-md"
+                />
+                <p className="mt-2">Vraau Team</p>
+                <p className="text-sm text-muted-foreground">2850 kills</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="https://placehold.co/600x400"
+                  alt="Clan 3"
+                  className="w-24 h-24 mx-auto rounded-md"
+                />
+                <p className="mt-2">Brooklyn Charlovers</p>
+                <p className="text-sm text-muted-foreground">1800 kills</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="https://placehold.co/600x400"
+                  alt="Clan 4"
+                  className="w-24 h-24 mx-auto rounded-md"
+                />
+                <p className="mt-2">Leed Zeppelin</p>
+                <p className="text-sm text-muted-foreground">1201 kills</p>
+              </div>
+              <div className="text-center">
+                <img
+                  src="https://placehold.co/600x400"
+                  alt="Clan 5"
+                  className="w-24 h-24 mx-auto rounded-md"
+                />
+                <p className="mt-2">Premier League</p>
+                <p className="text-sm text-muted-foreground">1180 kills</p>
+              </div>
+            </div>
+            <div className="text-right mt-4">
+              <a href="#" className="text-blue-500">
+                Exibir mais guilds
+              </a>
+            </div>
+          </section>
+        </main>
+      </div>
 
       <TooltipProvider>
         <div className="flex h-full flex-col">

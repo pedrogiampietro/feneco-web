@@ -60,6 +60,12 @@ const router = createBrowserRouter([
           Component: (await import("./pages/Guilds/view-guild")).default,
         }),
       },
+      {
+        path: "/bazar",
+        lazy: async () => ({
+          Component: (await import("./pages/Bazar")).default,
+        }),
+      },
     ],
   },
 

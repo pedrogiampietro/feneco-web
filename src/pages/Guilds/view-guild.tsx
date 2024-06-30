@@ -110,49 +110,63 @@ export default function ViewGuildInformation() {
             </div>
           </TabsContent>
           <TabsContent value="wars">
-            <div className="p-6">
-              <h2 className="text-2xl font-bold mb-4">Wars</h2>
-              <Card className="p-4">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary-foreground rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-sm">
-                      G
-                    </div>
-                    <div>
-                      <div className="font-bold">The Mighty Guild</div>
-                      <div className="text-sm text-muted-foreground">
-                        120 Members
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary-foreground rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-sm">
-                      E
-                    </div>
-                    <div>
-                      <div className="font-bold">Eternal Crusaders</div>
-                      <div className="text-sm text-muted-foreground">
-                        90 Members
-                      </div>
-                    </div>
-                  </div>
+            <div className="p-4">
+              <div className="flex items-center mb-4">
+                <span className="px-2 py-1 text-sm font-bold text-black bg-green-500">
+                  Active War
+                </span>
+                <span className="ml-4 text-sm">
+                  Winning the war against Fluffy Kittens (1 - 0)
+                </span>
+                <span className="ml-auto text-sm">Started August 8, 2015</span>
+              </div>
+              <div className="flex items-center mb-4 space-x-2">
+                <span className="px-2 py-1 text-sm font-bold text-black bg-red-500">
+                  110% death loss
+                </span>
+                <span className="px-2 py-1 text-sm font-bold text-black bg-yellow-500">
+                  1,000,000gp wager
+                </span>
+                <span className="px-2 py-1 text-sm font-bold text-black bg-blue-500">
+                  invites allowed
+                </span>
+              </div>
+              <div className="flex items-center mb-4">
+                <div className="flex items-center">
+                  <img
+                    src="https://placehold.co/600x400"
+                    alt="Guild Logo"
+                    className="object-cover w-10 h-10"
+                  />
+                  <span className="ml-2 text-lg font-bold">
+                    DRAGONS OF THE DANK (1 KILL)
+                  </span>
                 </div>
-                <Separator />
-                <div className="flex items-center justify-between mt-4">
-                  <div>
-                    <div className="font-bold">Kills: 32</div>
-                    <div className="text-sm text-muted-foreground">
-                      The Mighty Guild
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-bold">Kills: 28</div>
-                    <div className="text-sm text-muted-foreground">
-                      Eternal Crusaders
-                    </div>
-                  </div>
+                <div className="flex items-center ml-auto">
+                  <img
+                    src="https://placehold.co/600x400"
+                    alt="Guild Logo"
+                    className="object-cover w-10 h-10"
+                  />
+                  <span className="ml-2 text-lg font-bold">
+                    FLUFFY KITTENS (0 KILLS)
+                  </span>
                 </div>
-              </Card>
+              </div>
+              <div className="flex items-center mb-4">
+                <div className="flex items-center">
+                  <span className="ml-2 text-sm">
+                    <span className="font-bold text-green-500">Synt4x</span> (1
+                    kill / 0 deaths)
+                  </span>
+                </div>
+                <div className="flex items-center ml-auto">
+                  <span className="ml-2 text-sm">
+                    <span className="font-bold text-blue-500">Some Noob</span>{" "}
+                    (0 kills / 1 death)
+                  </span>
+                </div>
+              </div>
             </div>
           </TabsContent>
         </Tabs>
