@@ -84,10 +84,10 @@ const monsters = [
 ];
 
 export default function Wikia() {
-  const [selectedQuest, setSelectedQuest] = useState(null);
+  const [selectedQuest, setSelectedQuest] = useState<any>(null);
   const [activeNavItem, setActiveNavItem] = useState("Quests");
 
-  const handleRowClick = (quest) => {
+  const handleRowClick = (quest: any) => {
     setSelectedQuest(quest);
   };
 

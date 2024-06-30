@@ -1,4 +1,3 @@
-import { Server } from "@/pages/Highscores/data/schema";
 import { createBrowserRouter } from "react-router-dom";
 import GeneralError from "./pages/Errors/general-error";
 import NotFoundError from "./pages/Errors/not-found-error";
