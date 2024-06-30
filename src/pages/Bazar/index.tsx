@@ -5,16 +5,20 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {@/components/ui/avatar
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/custom/ui/avatar";
 import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
+  Dropdo@/components/ui/dropdown-menu
+  DropdownMenuTrigger,@/components/ui/button
+  DropdownMenuContent,@/components/ui/label
+  DropdownMenuItem,@/components/ui/badge
+} from "@/components/custom/ui/dropdown-menu";
+import { Button } from "@/components/custom/ui/button";
+import { Label } from "@/components/custom/ui/label";
+import { Badge } from "@/components/custom/ui/badge";
 import {
   AxeIcon,
   BadgeIcon,
