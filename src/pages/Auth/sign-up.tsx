@@ -15,7 +15,7 @@ export default function SignUp() {
     <Layout>
       {/* ===== Top Heading ===== */}
       <LayoutHeader>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4 mt-4">
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
         </div>

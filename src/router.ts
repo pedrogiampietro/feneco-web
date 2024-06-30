@@ -1,3 +1,4 @@
+import { Server } from "@/pages/Highscores/data/schema";
 import { createBrowserRouter } from "react-router-dom";
 import GeneralError from "./pages/Errors/general-error";
 import NotFoundError from "./pages/Errors/not-found-error";
@@ -64,6 +65,18 @@ const router = createBrowserRouter([
         path: "/bazar",
         lazy: async () => ({
           Component: (await import("./pages/Bazar")).default,
+        }),
+      },
+      {
+        path: "/info",
+        lazy: async () => ({
+          Component: (await import("./pages/Serverinfo")).default,
+        }),
+      },
+      {
+        path: "/wikia",
+        lazy: async () => ({
+          Component: (await import("./pages/Wikia")).default,
         }),
       },
     ],

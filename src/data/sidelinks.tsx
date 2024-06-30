@@ -1,13 +1,11 @@
 import {
-  IconHexagonNumber3,
-  IconHexagonNumber4,
   IconUserShield,
   IconHome,
   IconUserPlus,
   IconKey,
 } from "@tabler/icons-react";
 import { BarChartIcon } from "@radix-ui/react-icons";
-import { GroupIcon, ShieldHalf, UserPlus } from "lucide-react";
+import { BookCopy, ShieldHalf, UserPlus } from "lucide-react";
 
 export interface NavLink {
   title: string;
@@ -64,6 +62,12 @@ export const sidelinks: SideLink[] = [
     label: "",
     href: "/bazar",
     icon: <UserPlus />,
+  },
+  {
+    title: "Wikia",
+    label: "",
+    href: "/wikia",
+    icon: <BookCopy />,
   },
   // {
   //   title: "Forum",

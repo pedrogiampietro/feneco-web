@@ -14,7 +14,7 @@ export const characterColumns: ColumnDef<Character>[] = [
   // },
   {
     accessorKey: "Name",
-    filterFn: (row, id, value) => {
+    filterFn: (row: any, id, value) => {
       return row.getValue(id).toLowerCase().includes(value.toLowerCase());
     },
     header: ({ column }) => (

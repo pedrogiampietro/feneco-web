@@ -43,7 +43,7 @@ export default function CharacterBazar() {
   return (
     <Layout>
       <LayoutHeader>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4 mt-4">
           <SearchCharacter />
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}

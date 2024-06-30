@@ -65,7 +65,7 @@ export default function NewsDisplay() {
   return (
     <Layout>
       <LayoutHeader>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4 mt-4">
           <SearchCharacter />
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
@@ -73,7 +73,7 @@ export default function NewsDisplay() {
       </LayoutHeader>
 
       <div className="text-white">
-        <header className="bg-primary p-2 flex items-center justify-between border rounded-md mx-4">
+        <header className="border p-2 flex items-center justify-between border rounded-md mx-2">
           <div className="flex items-center space-x-2">
             <img
               src="https://placehold.co/600x400"

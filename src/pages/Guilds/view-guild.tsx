@@ -7,7 +7,6 @@ import { UserNav } from "@/components/user-nav";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 
 export default function ViewGuildInformation() {
   const [activeTab, setActiveTab] = useState("members");
@@ -16,7 +15,7 @@ export default function ViewGuildInformation() {
   return (
     <Layout>
       <LayoutHeader>
-        <div className="ml-auto flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4 mt-4">
           <ThemeSwitch />
           {isAuthenticated ? <UserNav /> : <LoginDropdown />}
         </div>
