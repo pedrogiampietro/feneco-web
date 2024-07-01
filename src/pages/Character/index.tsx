@@ -1,18 +1,9 @@
 import { useState } from "react";
 
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import {@/components/ui/tabs
-  Tabs,@/components/ui/badge
-  TabsList,@/components/ui/avatar
-  TabsTrigger,
-  TabsContent,
-} from "@/components/custom/ui/tabs";
-import { Badge } from "@/components/custom/ui/badge";
-import {
-  Avatar,
-  AvatarImage,
-  AvatarFallback,
-} from "@/components/custom/ui/avatar";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   Axe,
   Crosshair,

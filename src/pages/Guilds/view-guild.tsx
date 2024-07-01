@@ -4,14 +4,9 @@ import ThemeSwitch from "@/components/theme-switch";
 import { useAuth } from "@/hooks/use-auth";
 import { LoginDropdown } from "@/components/login-dropdown";
 import { UserNav } from "@/components/user-nav";
-import {@/components/ui/tabs
-  Tabs,@/components/ui/card
-  TabsList,@/components/ui/badge
-  TabsTrigger,
-  TabsContent,
-} from "@/components/custom/ui/tabs";
-import { Card, CardContent } from "@/components/custom/ui/card";
-import { Badge } from "@/components/custom/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function ViewGuildInformation() {
   const [activeTab, setActiveTab] = useState("members");
